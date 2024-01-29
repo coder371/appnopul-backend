@@ -1,0 +1,9 @@
+const { Prefixer } = require('../../../../utilities/formatters');
+const {prefix} = require('../config');
+Prefixer.setPrefix(prefix);
+
+module.exports = {
+    [Prefixer.addPrefix('GetAll')]: require('./getAll'),
+    [Prefixer.addPrefix('GetOne')]: require('./getOne'),
+    [Prefixer.addPrefix('GetByCategory')]: require('./getByCategory.js'),
+}

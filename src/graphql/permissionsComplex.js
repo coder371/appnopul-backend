@@ -1,0 +1,9 @@
+const { shield } = require('graphql-shield');
+const lodash = require('lodash');
+const appsPermissions = require('./resolvers/apps.resolvers/permissions')
+const categoriesPermissions = require('./resolvers/categories.resolvers/permissions')
+const productsPermissions = require('./resolvers/products.resolvers/permissions')
+const addressesPermissions = require('./resolvers/addresses.resolvers/permissions')
+const ordersPermissions = require('./resolvers/orders.resolvers/permissions')
+const permissions = lodash.merge(appsPermissions,categoriesPermissions,productsPermissions,addressesPermissions,ordersPermissions)
+module.exports =  shield(permissions);
